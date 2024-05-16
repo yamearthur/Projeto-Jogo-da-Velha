@@ -46,6 +46,7 @@ $(document).ready(function(){
     $('.jogada').click(function(){
 
         var id_campo_clicado = this.id;
+        $('#'+id_campo_clicado).off();
         jogada(id_campo_clicado);
     });
 
@@ -113,11 +114,11 @@ $(document).ready(function(){
     function ganhador(pontos){
         if(pontos==-3){
             var jogada1 = $('#apelido-jogador1').val();
-            alert('vitoria do '+ jogada1);
+            alert(jogada1 + ' ganhou essa partida.');
             $('.jogada').off();
         }else if(pontos ==3){
             var jogada2 = $('#apelido-jogador2').val();
-            alert('vitoria de '+ jogada2);
+            alert(jogada2 + ' ganhou essa partida.');
             $('.jogada').off();
         }
 
